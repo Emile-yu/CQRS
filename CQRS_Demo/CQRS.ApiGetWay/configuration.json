@@ -1,0 +1,30 @@
+{
+  "Routes": [
+    {
+      //APIServiceOne
+      "DownstreamPathTemplate": "/api/{Controller}/{action}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5196
+        }
+      ],
+      "UpstreamPathTemplate": "/One/{Controller}/{action}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      //APIServiceTwo
+      "DownstreamPathTemplate": "/api/{controller}/{action}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5197
+        }
+      ],
+      "UpstreamPathTemplate": "/Two/{controller}/{action}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    }
+  ]
+}

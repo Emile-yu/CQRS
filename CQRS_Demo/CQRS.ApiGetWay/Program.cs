@@ -21,6 +21,10 @@ namespace CQRS.ApiGetWay
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureAppConfiguration((context, config) =>
+                    {
+                        config.AddJsonFile("configuration.json");
+                    });
                 });
     }
 }
